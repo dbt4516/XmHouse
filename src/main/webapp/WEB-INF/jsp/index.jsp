@@ -3,7 +3,7 @@
 <%@ page import="com.cnc.xmhouse.service.HouseService" %>
 <%@ page import="com.cnc.xmhouse.entity.THouse" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Date" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <jsp:include page="common.jsp"></jsp:include>
 <body>
 <h1 style="margin-bottom: 30px;">
