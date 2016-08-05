@@ -41,7 +41,7 @@ public class CrawlService {
     @Autowired
     private BaseDao<THouse>houseDao;
 
-    @Scheduled(cron = "0 */10 * * * *")
+    @Scheduled(cron = "0 */10 8-19 * * *")
     public void crawl() {
         try {
             List<TDailySale>res=TDailySale.getList(areas);

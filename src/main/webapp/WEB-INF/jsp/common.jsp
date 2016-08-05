@@ -16,12 +16,9 @@
 <%@ taglib prefix='sec' uri='http://www.springframework.org/security/tags' %>
 <html>
 <head>
-    <title>网宿慕课在线考试系统</title>
+    <title>厦门房产成交信息</title>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta charset="UTF-8">
-    <meta name="description" content="网宿在线考试系统" />
-    <meta name="keywords" content="网宿，考试，CDN" />
-    <meta name="author" content="考试系统第4小组" />
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/css/font-awesome.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/css/online.min.css" rel="stylesheet" type="text/css"/>
