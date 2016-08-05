@@ -4,7 +4,7 @@ import com.cnc.xmhouse.dao.BaseDao;
 import com.cnc.xmhouse.entity.TCrawlLog;
 import com.cnc.xmhouse.entity.TDailySale;
 import com.cnc.xmhouse.entity.THouse;
-import com.sun.xml.internal.txw2.annotation.XmlAttribute;
+
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.http.client.fluent.Request;
 import org.jsoup.Jsoup;
