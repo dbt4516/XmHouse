@@ -1,0 +1,181 @@
+.m-inner{
+    margin:-59px 20px 0 0;
+    padding-left:50px;
+    background-color: #fff;
+    border-left:1px solid #eee;
+    height:100%;
+    padding-right: 100px;
+    overflow: auto;
+    padding-bottom: 100px;
+    color:#666;
+    font-family: 微软雅黑;
+}
+.m-inner h4{
+    padding-top:25px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.m-inner>button{
+    margin-top:40px;
+}
+.m-queNum{
+    margin-right:15px;
+    font-size: 16px;
+    line-height: 16px;
+}
+.m-queNum,.m-description,.m-dan,.m-duo,.m-pan{
+    float: left;
+}
+.m-option,.m-choice{
+    display: inline-block;
+}
+.m-dan span,.m-duo span,.m-pan span{
+    margin-right:5px;
+    border-radius: 2px;
+    padding:2px 4px;
+}
+.m-dan span{
+    background-color:#E3F8FF;
+    border:1px solid #BFDFFF;
+}
+.m-choiceList{
+    list-style: none;
+    margin-left:-10px;
+}
+.m-choiceList{
+    width:650px;
+}
+.m-choiceList li{
+    float:left;
+    width:600px;
+    padding-right:10px;
+}
+.m-title{
+    width:650px;
+    margin-top:-5px;
+    cursor: pointer;
+}
+.m-title p{
+    display: inline-block;
+    line-height:25px;
+}
+.m-duo span{
+    background-color: #FFE2D9;
+    border:1px solid #FFB399;
+}
+.m-pan span{
+    background-color: #eee;
+    border:1px solid #ddd;
+}
+.m-ans,.m-online{
+    float:left;
+    border:1px solid #ccc;
+    padding:0 5px;
+    color:#65a200;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px #ddd;
+    margin-left:20px;
+}
+.m-short p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.m-page{
+    float:right;
+    margin-right:510px;
+    margin-top:20px;
+}
+.m-page .prevPage,.m-page .disabled,.m-page .current,.m-page .tcdNumber,.m-line{
+    margin-right:5px;
+}
+.m-page .current,.m-page .tcdNumber{
+    border:1px solid #ddd;
+    padding:3px 6px;
+}
+.m-page .current{
+    background-color: #337ab7;
+    color:#fff;
+}
+.m-exam,.m-course{
+    width:100%;
+    margin:20px auto;
+    font-family: 微软雅黑;
+}
+.m-exam th,.m-exam tr,.m-course th,.m-course tr{
+    font-weight: normal;
+    text-align: center;
+    font-size: 14px;
+}
+.m-form-left{
+    margin-left:30px;
+}
+.m-content{margin:20px;}
+.m-content .m-course{position:relative;float:left;width:225px;height:200px;margin:10px; background-color: #f8f8f8;box-shadow: 0 1px 1px 1px #e6e6e6;font:12px/12px '微软雅黑';}
+.m-content .m-course img{width:223px;height:124px;margin:1px 1px 10px 1px;}
+.m-content .m-course .courseName{width:214px;height:12px;color:#333;padding-left:5px;overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}
+.m-content .m-course .teacher{color:#999;padding:0 5px;}
+.m-content .m-course strong{display:block;color:#ff3f00;margin:10px 0 0 5px;}
+.m-content .m-course a{display:none;cursor:pointer;}
+.m-content .m-course a:hover{color:#333;text-decoration:none;}
+.m-content .m-course a img{float:left;}
+.m-content .m-course a h3{font:20px/26px 'Microsoft YaHei';margin:0 10px 12px 233px;color:#333;}
+.m-content .m-course a .categoryname{height:40px;font:12px/20px 'Microsoft YaHei';padding:10px 0 0 233px;color:#333;}
+.m-content .m-course a .description{clear:both;font:14px/24px 'Microsoft YaHei';background-color:#f8f8f8;margin:20px -20px -20px;padding:20px;}
+.m-content .m-course:hover a{display:block; position:absolute; top:0; left:0; width:431px; min-height:218px; background:#fff; padding:20px; box-shadow:0 0 2px 1px #d3d1d2; z-index:99;}
+
+.m-inner h5,.m-inner .m-tab-title{display:inline-block;}
+.m-inner .m-tab-title div{font:12px/20px 'Microsoft YaHei';color:#333;}
+.m-inner .m-tab-title span{display: inline-block;margin-right:20px;padding-top: 5px;}
+
+.m-main{background-color: #FBFBFB;margin:20px 0;width:80%;color:#666;}
+.m-main .m-top,.m-main .m-tab{border:1px dashed #ccc;padding:20px;}
+.m-main img{float:left;width:200px;height:150px;}
+.m-main .m-top p{margin-left:220px;}
+.m-main .m-tab{width:100%;overflow:hidden;margin-top:20px;}
+.m-main ul li{float:left;width:140px;height:42px;line-height:42px;text-align: center;position: relative;list-style: none;}
+.m-main ul li a{cursor:pointer;text-decoration:none;}
+.m-main ul li.active{background-color:#5bc0de;}
+.m-main ul li.active a{color:#fff;}
+
+.m-checkbox{margin-top:20px;padding:0 10px 10px 10px;border:1px solid #ccc;background-color:#FBFBFB;box-shadow: 0 1px 1px 1px #e6e6e6;font:12px/12px '微软雅黑'; border-radius: 5px;}
+.m-checkbox .m-checkbox-header{margin-left:-10px;padding-left:10px;width:120px;margin-bottom: 10px;background-color: #31b0d5;color:#fff;box-shadow:0 1px 1px 1px #e6e6e6;}
+.m-checkbox .m-select-all,.m-checkbox .m-select-none{padding:10px 0;}
+.m-checkbox .m-checkbox-body .checkbox-line{float:left;padding-right:20px;}
+.m-inner .m-tab-list span{padding-top: 5px;margin-right:10px;}
+.m-inner .m-tab-list .time-danger{color:#d9534f;margin-left:5px;}
+
+.dropdown-menu li a i{float:right;}
+.dropdown-menu li a{padding-right:0;}
+#search-box,#search-exempt-box,#search-leave-box{padding:20px;}
+#search-box a,#search-exempt-box a,#search-leave-box a{display:inline-block;margin:5px 10px 5px 0;padding:5px;border:1px dashed #ccc;text-decoration: none;cursor: pointer;}
+.btns,#ctlBtn{margin-top:20px;}
+
+.m-message{margin-top:80px;background-color:#fff;padding: 5px;}
+.m-message-list{margin-top:5px;}
+.m-message-list:first-of-type{margin-top:20px;}
+.message-content span{font:12px/14px 'Microsoft YaHei';color:#333;}
+.message-content .content-user{color:#10ae58;}
+.message-content .message-time{float:right;}
+.m-message .m-page1{margin-right:350px;}
+
+.add-exam-question{
+    float:right;
+    margin-top:-10px;
+}
+.generate-test-paper{float:right;}
+.m-user-ans{padding-left:20px;margin-bottom: 20px;}
+.m-user-ans input{width:150px;display: inline-block;}
+#submit-ans{float:right;}
+.m-time{position:fixed;right:50px;bottom:100px;background-color: #13a654;box-shadow: 0 1px 1px 1px #e6e6e6;font:12px/12px '微软雅黑';padding:20px;color:#fff;}
+
+.m-exam-list{padding:10px;border:1px dashed #ccc;color:#333;background-color: #F9F7F7;font-size:14px;margin-bottom:20px;}
+.m-exam-list .m-exam-left{width:100%;color:#61A500;}
+.m-exam-list .m-exam-left span{margin-left:10px;color:#333;}
+.m-exam-list .m-exam-right{float:right;margin-top:-20px;}
+.m-exam-list .m-exam-result{padding:10px;margin-top:5px;}
+.exam-date span{margin-left:20px;}
+.m-notice{color:red;margin-left:135px!important;}
+.exam-time span,.exam-result span{margin-left:70px;}
+.m-exam-right span{color:#61A500;}
