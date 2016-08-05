@@ -2,6 +2,7 @@ import com.cnc.xmhouse.dao.BaseDao;
 import com.cnc.xmhouse.entity.THouse;
 import com.cnc.xmhouse.framework.config.AppsApplicationConfig;
 import com.cnc.xmhouse.service.CrawlService;
+import com.cnc.xmhouse.service.HouseService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +23,13 @@ public class ExamServiceTest {
     @Autowired
     private BaseDao<THouse>houseDao;
     @Autowired
+    private HouseService houseService;
+    @Autowired
     private CrawlService crawlService;
 
     @Test
     public void tesetDB(){
-       crawlService.crawl();
+        crawlService.isNew("");
+        System.out.println();
     }
 }

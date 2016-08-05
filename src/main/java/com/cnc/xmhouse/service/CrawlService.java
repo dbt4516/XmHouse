@@ -47,7 +47,8 @@ public class CrawlService {
             List<TDailySale>res=TDailySale.getList(areas);
             String html = Request.Get("http://cloud.xm.gov.cn:88/xmzf/zf/newspfj.jsp")
                     .execute().returnContent().asString().trim();
-            logDao.add(new TCrawlLog(new Timestamp(new Date().getTime()),200,html));
+
+            logDao.add(new TCrawlLog(new Timestamp(new Date().getTime()),200,isNew(html)?html:"--"));
             Document document = Jsoup.parse(html);
 
             List<Element> rows = document.select("tr:gt(0)").subList(0, 2);
@@ -83,5 +84,13 @@ public class CrawlService {
         }
     }
 
+    public boolean isNew(String html){
+        List<TCrawlLog> tCrawlLogs = logDao.queryWithStartLimit("From TCrawlLog order by ts desc", 0, 1);
+        if(tCrawlLogs.size()>0){
+            if(html.equals(tCrawlLogs.get(0).getHtml()))
+                return false;
+        }
+        return true;
+    }
 
 }
