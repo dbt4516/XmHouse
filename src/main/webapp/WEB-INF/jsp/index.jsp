@@ -3,6 +3,9 @@
 <div>
   房产成交列表
 </div>
+<div>
+  <%=request.getRemoteAddr() %>
+</div>
 </body>
 
 
