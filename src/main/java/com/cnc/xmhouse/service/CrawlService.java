@@ -1,5 +1,6 @@
 package com.cnc.xmhouse.service;
 
+import com.cnc.xmhouse.base.Const;
 import com.cnc.xmhouse.dao.BaseDao;
 import com.cnc.xmhouse.entity.TCrawlLog;
 import com.cnc.xmhouse.entity.TDailySale;
@@ -32,7 +33,7 @@ import java.util.List;
 public class CrawlService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CrawlService.class);
-    public static final String[] areas={"思明区","湖里区","集美区","海沧区","同安区","翔安区"};
+
 
     @Autowired
     private BaseDao<TCrawlLog>logDao;
@@ -44,7 +45,7 @@ public class CrawlService {
     @Scheduled(cron = "0 */10 8-19 * * *")
     public void crawl() {
         try {
-            List<TDailySale>res=TDailySale.getList(areas);
+            List<TDailySale>res=TDailySale.getList(Const.areas);
             String html = Request.Get("http://cloud.xm.gov.cn:88/xmzf/zf/newspfj.jsp")
                     .execute().returnContent().asString().trim();
 
@@ -85,7 +86,7 @@ public class CrawlService {
     }
 
     public boolean isNew(String html){
-        List<TCrawlLog> tCrawlLogs = logDao.queryWithStartLimit("From TCrawlLog order by ts desc", 0, 1);
+        List<TCrawlLog> tCrawlLogs = logDao.queryWithStartLimit("From TCrawlLog where html!='--' order by ts desc", 0, 1);
         if(tCrawlLogs.size()>0){
             if(html.equals(tCrawlLogs.get(0).getHtml()))
                 return false;

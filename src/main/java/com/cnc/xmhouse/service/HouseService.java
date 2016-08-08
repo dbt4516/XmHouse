@@ -23,4 +23,10 @@ public class HouseService {
         Timestamp midnight = Timestamp.valueOf(LocalTime.MIDNIGHT.atDate(LocalDate.now()));
         return houseDao.query("From THouse where ts>?", midnight);
     }
+
+    public List<THouse>getThatDay(long thatDay){
+        Timestamp midnight = new Timestamp(thatDay);
+        Timestamp nextMidNight=new Timestamp(thatDay+24*60*60*1000);
+        return houseDao.query("From THouse where ts>? and ts<?", midnight,nextMidNight);
+    }
 }

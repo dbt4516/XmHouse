@@ -81,43 +81,4 @@ public class LogService {
         return baseDao.queryHqlCount(hql.toString(),hs);
     }
 
-    @Scheduled(cron = "0 0 0 * * ?")
-    public void parseToDb() {
-        File file = FileUtil.getYesterdayLog(path);
-        BufferedReader br;
-        String line;
-        try {
-            br = new BufferedReader(new FileReader(file));
-            while ((line = br.readLine()) != null) {
-                String[] s = line.split(" ");
-                String time = s[0] + " " + s[1];
-                Integer type = LogType.getTypeValue(s[3]);
-                String user = "";
-                //解析邮箱提取发送人
-                Pattern regex = Pattern.compile("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}");
-                Matcher matcher = regex.matcher(line);
-                if (matcher.find())
-                    user = matcher.group(0);
-                Log log = new Log(user, type, line, time);
-                baseDao.save(log);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Scheduled(cron = "0 0 0 * * ?")
-    public void loggerDel() {
-        LOGGER.info("开始删除过期日志数据...");
-        String sql = "SELECT id FROM `log` WHERE (SELECT datediff(now(),`time`) > 10)";
-        List<Integer> ids = baseDao.querySqlNoneType(sql);
-        if(ids.size() != 0) {
-            String id = Joiner.on(" , ").join(ids);
-            sql = "DELETE FROM `log` WHERE `id` IN (" + id + ")";
-            baseDao.executeUpdateSql(sql);
-            LOGGER.info("过期日志删除成功!");
-        }else {
-            LOGGER.info("没有发现过期日志,没有进行任何删除工作!");
-        }
-    }
 }
