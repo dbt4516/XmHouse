@@ -5,7 +5,18 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page trimDirectiveWhitespaces="true" %>
-<jsp:include page="common.jsp"></jsp:include>
+<head>
+
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta charset="UTF-8">
+    <c:set var="ctx" value="${pageContext.request.contextPath }"/>
+    <link href="${ctx}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/css/online.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/css/index.css" rel="stylesheet" type="text/css"/>
+
+<title>厦门房产成交信息</title>
+</head>
 <body>
 <h1 style="margin-bottom: 30px;">
     今日房产成交列表

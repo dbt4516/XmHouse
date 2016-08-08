@@ -31,7 +31,6 @@ import java.util.Properties;
 @EnableAsync
 @ComponentScan(basePackages = {"com.cnc"})
 @PropertySource(value = {"classpath:service.properties"})
-@ImportResource("classpath:spring-security.xml")
 @EnableScheduling
 public class AppsApplicationConfig {
     @Value("${email.name}")
@@ -59,11 +58,6 @@ public class AppsApplicationConfig {
     public ObjectMapper objectMapper(){
         return new ObjectMapper();
     }
-//
-//    @Bean
-//    public RedisDao redisDao(){
-//        return new RedisDao("localhost",6379);
-//    }
 
     @Bean
     public RequestMappingHandlerAdapter requestMappingHandlerAdapter() {

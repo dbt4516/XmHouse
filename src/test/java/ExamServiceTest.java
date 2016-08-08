@@ -3,6 +3,7 @@ import com.cnc.xmhouse.entity.THouse;
 import com.cnc.xmhouse.framework.config.AppsApplicationConfig;
 import com.cnc.xmhouse.service.CrawlService;
 import com.cnc.xmhouse.service.HouseService;
+import com.cnc.xmhouse.service.StaticService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,11 @@ public class ExamServiceTest {
     private HouseService houseService;
     @Autowired
     private CrawlService crawlService;
+    @Autowired
+    private StaticService staticService;
 
     @Test
     public void tesetDB(){
-        crawlService.isNew("");
-        System.out.println();
+      staticService.get(1400625067000l,1470625067000l);
     }
 }

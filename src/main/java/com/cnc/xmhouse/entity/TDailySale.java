@@ -22,6 +22,17 @@ public class TDailySale {
     private Integer suiteCount;
     private Double areaSum;
 
+    public TDailySale(String location, Integer suiteCount, Double areaSum) {
+        this.location = location;
+        this.suiteCount = suiteCount;
+        this.areaSum = areaSum;
+    }
+
+    public TDailySale(Timestamp date, Integer suiteCount, Double areaSum) {
+        this.date = date;
+        this.suiteCount = suiteCount;
+        this.areaSum = areaSum;
+    }
 
     public TDailySale(String location){
         this.location=location;

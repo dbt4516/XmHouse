@@ -156,6 +156,13 @@ public class BaseDao<T> {
         return query.list();
     }
 
+    public List<Object> querySqlObj(String sql, Object... params) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createSQLQuery(sql);
+        setParam(query, params);
+        return query.list();
+    }
+
     public Pair<Integer,List<T>> countQuerySql(String sql, Object... params) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createSQLQuery(sql);

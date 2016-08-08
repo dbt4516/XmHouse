@@ -16,11 +16,12 @@
 <%@ taglib prefix='sec' uri='http://www.springframework.org/security/tags' %>
 <html>
 <head>
-    <title>厦门房产成交信息</title>
+
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta charset="UTF-8">
-    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/css/online.min.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
+    <c:set var="ctx" value="${pageContext.request.contextPath }"/>
+    <link href="${ctx}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/css/online.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/css/index.css" rel="stylesheet" type="text/css"/>
 

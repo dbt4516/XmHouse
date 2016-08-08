@@ -1,6 +1,5 @@
 package com.cnc.xmhouse.framework.spring;
 
-import com.cnc.xmhouse.util.CryptoUtil;
 import com.cnc.xmhouse.util.PropsUtil;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -39,14 +38,7 @@ public class SpringPropertyPlaceholderConfigurer extends PropertyPlaceholderConf
 		for (Object keyObj : props.keySet()) {
 			String key = String.valueOf(keyObj);
 			String value = props.getProperty(key);
-			if (StringUtils.hasText(value) && value.startsWith(SECRET_PREFIX)) {
-                try {
-                    String tmp = CryptoUtil.decryptApi(value.substring(SECRET_PREFIX.length()));
-                    value = tmp;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+
 			value = helper.replacePlaceholders(value, props);
 			tempProps.put(key, value);
 			props.setProperty(key, value);
