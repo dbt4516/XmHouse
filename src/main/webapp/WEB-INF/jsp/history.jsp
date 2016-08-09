@@ -33,7 +33,13 @@
 
     <title>厦门房地产成交信息</title>
 </head>
+
 <body style="margin: 5px;max-width: 600px">
+<div id="loading"
+     style="display: none; overflow: auto; z-index: 9999; background-color: rgba(0,0,0,.3);padding:0;
+             margin:0;top:0;left:0;background-position: center center; background-repeat: no-repeat;
+             height: 100%; width: 100%; position: fixed; background-image: url(${ctx}/img/loading.gif;)">
+</div>
 <h1 style="margin-bottom: 10px;">
     房产成交列表
 </h1>
