@@ -1,11 +1,5 @@
 <!doctype html>
-<%@ page import="org.springframework.web.servlet.support.RequestContextUtils" %>
-<%@ page import="org.springframework.context.ApplicationContext" %>
-<%@ page import="com.cnc.xmhouse.service.HouseService" %>
-<%@ page import="com.cnc.xmhouse.entity.THouse" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Date" %>
-<%@ page trimDirectiveWhitespaces="true" %>
+
 
 <%--
   Created by IntelliJ IDEA.
@@ -30,6 +24,9 @@
     <script src="${ctx}/js/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="${ctx}/js/statis/jquery.datetimepicker.min.js" type="text/javascript"></script>
     <script src="${ctx}/js/jquery/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="${ctx}/js/moment.js" type="text/javascript"></script>
+    <script src="${ctx}/js/history/history.js" type="text/javascript"></script>
+
     <script>
         var ctx= "${ctx}";
     </script>
@@ -37,30 +34,28 @@
     <title>厦门房地产成交信息</title>
 </head>
 <body style="margin: 5px;max-width: 600px">
-<h1 style="margin-bottom: 30px;">
-    今日房产成交列表
+<h1 style="margin-bottom: 10px;">
+    房产成交列表
 </h1>
-<%
-    ApplicationContext ac = RequestContextUtils.getWebApplicationContext(request);
-    HouseService houseService = (HouseService) ac.getBean("houseService");
-%>
+<div class="nav-search" id="nav-search" style="margin-bottom:5px;">
+    <form class="form-search" onsubmit="return false;">
+        <label for="day"  >日期：</label>
+        <input id="day" datepicker class="nav-search-input" >
+
+        <button class="btn btn-xs btn-info" onclick="search()" style="margin-bottom: 4px;">
+            查询
+        </button>
+    </form>
+</div>
+
 <div class="m-exam">
-    <table class="table table-hover">
+    <table class="table table-hover" id="table">
         <tr>
             <th>地点</th>
             <th>面积（M<sup>2</sup>）</th>
             <th>确认时间</th>
         </tr>
-        <% for (THouse h : houseService.getToday()) {%>
-        <tr>
-            <td><%=h.getLocation()%>
-            </td>
-            <td><%=String.format("%.2f", h.getArea())%>
-            </td>
-            <td><%=new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date(h.getTs().getTime()))%>
-            </td>
-        </tr>
-        <%}%>
+
     </table>
 </div>
 <div>

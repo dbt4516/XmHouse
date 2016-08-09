@@ -11,7 +11,6 @@ import org.apache.http.client.fluent.Request;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,6 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -45,7 +43,7 @@ public class CrawlService {
     @Scheduled(cron = "0 */10 8-19 * * *")
     public void crawl() {
         try {
-            List<TDailySale>res=TDailySale.getList(Const.areas);
+            List<TDailySale>res=TDailySale.getList(Const.locations);
             String html = Request.Get("http://cloud.xm.gov.cn:88/xmzf/zf/newspfj.jsp")
                     .execute().returnContent().asString().trim();
 

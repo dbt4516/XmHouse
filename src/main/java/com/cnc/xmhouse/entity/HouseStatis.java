@@ -6,11 +6,21 @@ import java.util.Map;
  * Created by hongzhan on 2016/8/8.
  */
 public class HouseStatis {
+    private int saleSuite;                  //总套数
+    private long saleArea;                   //总成交面积
+
     private String mostSaleLoc;             //卖出最多套房的地区
     private int mostSaleLocSuite;          //卖出最多套房的地区的套数
     private int mostInAllRatio;             //卖出最多套房的地区的套数占总套数的比例
-    private int saleSuite;                  //总套数
-    private long saleArea;                   //总成交面积
+    private String leastSaleLoc;            //售出最少套房的地区
+
+    public String getLeastSaleLoc() {
+        return leastSaleLoc;
+    }
+
+    public void setLeastSaleLoc(String leastSaleLoc) {
+        this.leastSaleLoc = leastSaleLoc;
+    }
 
     public int getSaleSuite() {
         return saleSuite;

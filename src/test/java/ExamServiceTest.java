@@ -11,8 +11,6 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import java.util.List;
-
 /**
  * Created by hongzhan on 2016/7/25.
  */
@@ -32,6 +30,6 @@ public class ExamServiceTest {
 
     @Test
     public void tesetDB(){
-      staticService.get(1400625067000l,1470625067000l);
+      staticService.getText(1400625067000l,1470625067000l);
     }
 }
