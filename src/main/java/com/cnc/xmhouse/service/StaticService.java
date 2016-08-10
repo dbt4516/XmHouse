@@ -68,7 +68,7 @@ public class StaticService {
         hs.setAvgArea((int) Math.round(areaSum / house.size()));
         hs.setBigAvgRatio(String.format("%.2f",hs.getBiggestArea()/(0.0+hs.getAvgArea())));
         if(hs.getBiggestArea()/(0.0+hs.getAvgArea())>2){
-            hs.setAreaCommet("%s倍，筒子们这是什么，将近100倍啊！");
+            hs.setAreaCommet(String.format("%s倍，筒子们这是什么，将近100倍啊！",hs.getBigAvgRatio()));
         }else{
            hs.setAreaCommet("似乎差别也没有很大，毕竟能买房的都是壕。");
         }
