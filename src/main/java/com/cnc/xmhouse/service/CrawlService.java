@@ -65,6 +65,11 @@ public class CrawlService {
                 TDailySale ori = dailySaleDao.queryGetOne(" From TDailySale where location=? and date=?", h.getLocation(), h.getDate());
                 if(ori==null){
                     dailySaleDao.save(h);
+                    int suiteGap=h.getSuiteCount()-0;
+                    double areaGap=h.getAreaSum()-0;
+                    for(int i=0;i<suiteGap;i++){
+                        houseDao.add(new THouse(h.getLocation(),areaGap/suiteGap));
+                    }
                 }else {
                     h.setId(ori.getId());
                     dailySaleDao.save(h);
