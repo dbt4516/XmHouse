@@ -47,7 +47,7 @@ public class StaticService {
         TDailySale sum=locSum.stream().reduce((a, b) -> new TDailySale(a.getLocation(), a.getSuiteCount() + b.getSuiteCount(), a.getAreaSum() + b.getAreaSum())).orElse(new TDailySale());
         hs.setSaleSuite(sum.getSuiteCount());
         hs.setSaleArea(Math.round(sum.getAreaSum()));
-        hs.setMostInAllRatio((int) (Math.round((mostSale.getSuiteCount()+0.0)/sum.getSuiteCount()*100)));
+        hs.setMostInAllRatio((int) (Math.round(sum.getSuiteCount()==0?0:(mostSale.getSuiteCount()+0.0)/sum.getSuiteCount()*100)));
         hs.setLeastSaleLoc(locSum.stream().min(Comparator.comparing(a->a.getSuiteCount())).orElse(new TDailySale()).getLocation());
 
         List<TDailySale> dailySum = objDao
@@ -65,12 +65,14 @@ public class StaticService {
         hs.setBiggesDate(ts2DateStringCN.apply(biggest.getTs()));
         hs.setBiggestArea((int) Math.round(biggest.getArea()));
         Double areaSum = house.stream().map(a -> a.getArea()).reduce(0d, (a, b) -> a + b);
-        hs.setAvgArea((int) Math.round(areaSum / house.size()));
-        hs.setBigAvgRatio(String.format("%.2f",hs.getBiggestArea()/(0.0+hs.getAvgArea())));
-        if(hs.getBiggestArea()/(0.0+hs.getAvgArea())>2){
-            hs.setAreaCommet(String.format("%s倍，筒子们这是什么，将近100倍啊！",hs.getBigAvgRatio()));
-        }else{
-           hs.setAreaCommet("似乎差别也没有很大，毕竟能买房的都是壕。");
+        hs.setAvgArea(house.size()==0?0:(int) Math.round(areaSum / house.size()));
+        hs.setBigAvgRatio(String.format("%.2f",hs.getAvgArea()==0?0:hs.getBiggestArea()/(0.0+hs.getAvgArea())));
+        if(hs.getAvgArea()!=0) {
+            if (hs.getBiggestArea() / (0.0 + hs.getAvgArea()) > 2) {
+                hs.setAreaCommet(String.format("%s倍，筒子们这是什么，将近100倍啊！", hs.getBigAvgRatio()));
+            } else {
+                hs.setAreaCommet("似乎差别也没有很大，毕竟能买房的都是壕。");
+            }
         }
         return hs;
     }
